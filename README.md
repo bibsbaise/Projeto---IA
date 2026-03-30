@@ -31,22 +31,48 @@ O projeto está inserido na área de **Educação** e **Sistemas de Recomendaç�
 O repositório está organizado nas seguintes pastas para facilitar a navegação e o acesso aos diferentes componentes do projeto:
 
 *   `relatorio/`: Contém o artigo parcial, versões do relatório, o template SBC e outros documentos relacionados ao desenvolvimento do projeto.<br/>
-*   `dataset/`: Armazena o conjunto de dados utilizado no projeto, acompanhado de uma breve descrição sobre sua origem e uso.<br/>
+*   `dataset/`: Contém amostras do dataset e arquivos auxiliares. O dataset completo não é versionado devido ao seu tamanho e é obtido via script automatizado.<br/>
 *   `notebooks/`: Inclui os notebooks Jupyter utilizados para análise exploratória dos dados, bem como para as etapas de limpeza e preparação.<br/>
 *   `codigo/`: Contém os scripts Python auxiliares e as rotinas principais de análise e preparação de dados.
 
-## Como Navegar e Executar
+## Dataset
+
+O projeto utiliza o dataset ASSISTments Data Set 2012-2013:
+https://www.kaggle.com/datasets/nicolaswattiez/skillbuilder-data-2009-2010?resource=download
+
+O dataset contém registros de interaçãoes de estudantes com exercícios, incluindo:
+- identificação do aluno (`user_id`)
+- habilidade/conteúdo (`skill`)
+- acerto ou erro (`correct`)
+- tempo de resposta (`ms_first_response`)
+- número de tentativas (`attempt_count`)
+- uso de dicas (`hint_count`)
+- sequência temporal (`start_time` e `end_time`)
+- identificação de exercício (`problem_id`)
+- lista de exercícios (`assignment_id`)
+- ordem de aprendizado (`sequence_id`)
+- emoção do aluno (`Average_confidence(FRUSTRATED)`, `Average_confidence(CONFUSED)` e `Average_confidence(CONCENTRATING)`)
+
+## Preparação dos Dados
+
+Devido ao grande volume do dataset original, ele não foi incluído diretamente no repositório.
+
+Para garantir reprodutibilidade, foi desenvolvido um script automatizado para download e organização dos dados:
+
+python codigo/load_data.py
+
+## Como Executar
 
 Para explorar e executar os componentes deste projeto, siga as orientações abaixo:
 
-1.  **Clonar o Repositório:** Utilize `git clone [URL do repositório]` para baixar o projeto para sua máquina local.<br/>
-2.  **Ambiente Virtual:** Recomenda-se fortemente a criação e ativação de um ambiente virtual Python para gerenciar as dependências do projeto de forma isolada.<br/>
-3.  **Instalação de Dependências:** Caso exista um arquivo `requirements.txt` na raiz do repositório, instale todas as bibliotecas necessárias utilizando o comando `pip install -r requirements.txt`.<br/>
-4.  **Navegação:**
-    *   Os notebooks interativos podem ser encontrados na pasta `notebooks/`. Eles podem ser abertos e executados utilizando ferramentas como Jupyter Notebook ou JupyterLab.
-    *   Os scripts Python auxiliares e as rotinas principais estão localizados na pasta `codigo/`.
-    *   O relatório parcial e outros documentos estão disponíveis para consulta na pasta `relatorio/`.
-5.  **Execução de Scripts:** Para executar scripts Python da pasta `codigo/`, navegue até a pasta via terminal e utilize o comando `python nome_do_script.py`, se aplicável.
+1.  **Instalação de Dependências** `pip install pandas kagglehub`<br/>
+
+2.  **Baixar o dataset:** `python codigo/load_data.py`<br/>
+Este script realiza o download automático do dataset e o organiza na pasta `dataset/raw/`<br>
+
+3.  **Gerar amostra dos dados:** `python codigo/create_sample.py`<br> 
+A amostra será salva em: `dataset/sample.csv`.<br>
+Essa etapa é necessária devido ao grande volume do dataset original, permitindo análises sem sobrecarga de memória.<br/>
 
 ## Etapa Atual do Projeto (Parte 2)
 
