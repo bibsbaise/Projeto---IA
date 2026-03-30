@@ -37,21 +37,21 @@ O repositório está organizado nas seguintes pastas para facilitar a navegaçã
 
 ## Dataset
 
-O projeto utiliza o dataset ASSISTments Data Set 2012-2013:
+O projeto utiliza o dataset ASSISTments Data Set 2012-2013:<br>
 https://www.kaggle.com/datasets/nicolaswattiez/skillbuilder-data-2009-2010?resource=download
 
-O dataset contém registros de interaçãoes de estudantes com exercícios, incluindo:
-- identificação do aluno (`user_id`)
-- habilidade/conteúdo (`skill`)
-- acerto ou erro (`correct`)
-- tempo de resposta (`ms_first_response`)
-- número de tentativas (`attempt_count`)
-- uso de dicas (`hint_count`)
-- sequência temporal (`start_time` e `end_time`)
-- identificação de exercício (`problem_id`)
-- lista de exercícios (`assignment_id`)
-- ordem de aprendizado (`sequence_id`)
-- emoção do aluno (`Average_confidence(FRUSTRATED)`, `Average_confidence(CONFUSED)` e `Average_confidence(CONCENTRATING)`)
+O dataset contém registros de interações de estudantes com exercícios, incluindo:
+- identificação do aluno: `user_id`
+- habilidade/conteúdo: `skill`
+- acerto ou erro:`correct`
+- tempo de resposta:`ms_first_response`
+- número de tentativas: `attempt_count`
+- uso de dicas: `hint_count`
+- sequência temporal: `start_time` e `end_time`
+- identificação de exercício: `problem_id`
+- lista de exercícios: `assignment_id`
+- ordem de aprendizado: `sequence_id`
+- emoção do aluno: `Average_confidence(FRUSTRATED)`, `Average_confidence(CONFUSED)` e `Average_confidence(CONCENTRATING)`
 
 ## Preparação dos Dados
 
@@ -59,20 +59,22 @@ Devido ao grande volume do dataset original, ele não foi incluído diretamente 
 
 Para garantir reprodutibilidade, foi desenvolvido um script automatizado para download e organização dos dados:
 
-python codigo/load_data.py
+`python codigo/load_data.py`
 
 ## Como Executar
 
 Para explorar e executar os componentes deste projeto, siga as orientações abaixo:
 
-1.  **Instalação de Dependências** `pip install pandas kagglehub`<br/>
+1. **Instalação de Dependências**
+   `pip install pandas kagglehub`<br/>
 
-2.  **Baixar o dataset:** `python codigo/load_data.py`<br/>
-Este script realiza o download automático do dataset e o organiza na pasta `dataset/raw/`<br>
+2. **Baixar o dataset:**
+   `python codigo/load_data.py`<br/>
+   Este script realiza o download automático do dataset e o organiza na pasta `dataset/raw/`<br>
 
-3.  **Gerar amostra dos dados:** `python codigo/create_sample.py`<br> 
-A amostra será salva em: `dataset/sample.csv`.<br>
-Essa etapa é necessária devido ao grande volume do dataset original, permitindo análises sem sobrecarga de memória.<br/>
+3. **Gerar amostra dos dados:** `python codigo/create_sample.py`<br>
+   A amostra será salva em: `dataset/sample.csv`.<br>
+   Essa etapa é necessária devido ao grande volume do dataset original, permitindo análises sem sobrecarga de memória.<br/>
 
 ## Etapa Atual do Projeto (Parte 2)
 
