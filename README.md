@@ -65,14 +65,38 @@ python codigo/load_data.py
 
 Para explorar e executar os componentes deste projeto, siga as orientações abaixo:
 
-1.  **Instalação de Dependências** `pip install pandas kagglehub`<br/>
+1. **Criar e ativar ambiente virtual:**<br>
+- `python3 -m venv venv`
+- `source venv/bin/activate`
 
-2.  **Baixar o dataset:** `python codigo/load_data.py`<br/>
+2.  **Instalação de dependências:** `pip install pandas kagglehub`<br/>
+
+3.  **Baixar o dataset:** `python codigo/load_data.py`<br/>
 Este script realiza o download automático do dataset e o organiza na pasta `dataset/raw/`<br>
 
-3.  **Gerar amostra dos dados:** `python codigo/create_sample.py`<br> 
+4.  **Gerar amostra dos dados:** `python codigo/create_sample.py`<br> 
 A amostra será salva em: `dataset/sample.csv`.<br>
 Essa etapa é necessária devido ao grande volume do dataset original, permitindo análises sem sobrecarga de memória.<br/>
+
+5. **Executar o notebook de análise exploratória** disponível em: `notebooks/analise_exploratoria.ipynb`<br>
+- abra no VS Code ou Jupyter Notebook
+- selecione o ambiente virtual (Python (venv))
+- execute as células sequencialmente
+
+## Análise Exploratória de Dados
+
+A análise exploratória foi orientada à identificação de padrões relevantes para recomendação personalizada.
+
+Foram analisadas métricas como:
+
+- Taxa de erro por habilidade
+- Tempo médio de resposta
+- Número de tentativas
+- Uso de dicas
+
+A partir da amostra analisada, observou-se uma tendência em que habilidades com maior taxa de erro também apresentam, em alguns casos, maior tempo de resposta e número de tentativas.
+
+Esse comportamento sugere possíveis dificuldades de aprendizagem, embora análises mais aprofundadas e com o conjunto completo de dados sejam necessárias para validação mais robusta.
 
 ## Etapa Atual do Projeto (Parte 2)
 
