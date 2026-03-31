@@ -65,7 +65,6 @@ Para garantir reprodutibilidade, foi desenvolvido um script automatizado para do
 
 Para explorar e executar os componentes deste projeto, siga as orientações abaixo:
 
-<<<<<<< HEAD
 1. **Criar e ativar ambiente virtual:**<br>
 - `python3 -m venv venv`
 - `source venv/bin/activate`
@@ -78,18 +77,6 @@ Este script realiza o download automático do dataset e o organiza na pasta `dat
 4.  **Gerar amostra dos dados:** `python codigo/create_sample.py`<br> 
 A amostra será salva em: `dataset/sample.csv`.<br>
 Essa etapa é necessária devido ao grande volume do dataset original, permitindo análises sem sobrecarga de memória.<br/>
-=======
-1. **Instalação de Dependências**
-   `pip install pandas kagglehub`<br/>
-
-2. **Baixar o dataset:**
-   `python codigo/load_data.py`<br/>
-   Este script realiza o download automático do dataset e o organiza na pasta `dataset/raw/`<br>
-
-3. **Gerar amostra dos dados:** `python codigo/create_sample.py`<br>
-   A amostra será salva em: `dataset/sample.csv`.<br>
-   Essa etapa é necessária devido ao grande volume do dataset original, permitindo análises sem sobrecarga de memória.<br/>
->>>>>>> 20319a617ef133ae2d235e66e6fc4cb6abb7def8
 
 5. **Executar o notebook de análise exploratória** disponível em: `notebooks/analise_exploratoria.ipynb`<br>
 - abra no VS Code ou Jupyter Notebook
